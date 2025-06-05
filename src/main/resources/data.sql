@@ -14,4 +14,11 @@ VALUES
 ('Lucky', '2000-06-24', 2, 10),
 ('Sly', '2002-06-08', 1, 10);
 
+INSERT INTO vets (first_name, last_name) VALUES ('James', 'Carter');
+INSERT INTO vets (first_name, last_name) VALUES ('Helen', 'Leary');
+INSERT INTO vets (first_name, last_name) VALUES ('Linda', 'Douglas');
+INSERT INTO vets (first_name, last_name) VALUES ('Rafael', 'Ortega');
+INSERT INTO vets (first_name, last_name) VALUES ('Henry', 'Stevens');
+
+
 
