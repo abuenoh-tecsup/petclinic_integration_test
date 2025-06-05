@@ -1,7 +1,7 @@
 package com.tecsup.petclinic.services;
 
 import com.tecsup.petclinic.entities.Vet;
-import com.tecsup.petclinic.exceptions.VetNotFoundException;
+import com.tecsup.petclinic.exception.VetNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
