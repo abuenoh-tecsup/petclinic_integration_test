@@ -54,8 +54,8 @@ public class VetControllerTestCreate {
     @Test
     public void testDeleteVet() throws Exception {
 
-        String VET_FIRSTNAME = "Beethoven3";
-        String LASTNAME = "2020-05-20";
+        String VET_FIRSTNAME = "Eduardo";
+        String LASTNAME = "Bullon";
 
         VetDTO newVetTO = new VetDTO();
         newVetTO.setFirstname(VET_FIRSTNAME);
