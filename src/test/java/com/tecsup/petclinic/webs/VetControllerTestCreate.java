@@ -42,13 +42,13 @@ public class VetControllerTestCreate {
         newVetDTO.setLastname(LASTNAME);
         newVetDTO.setId(TYPE_ID);
 
-        this.mockMvc.perform(post("/pets")
+        this.mockMvc.perform(post("/vets")
                         .content(om.writeValueAsString(newVetDTO))
                         .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isCreated())
                 //.andExpect(jsonPath("$.id", is(1)))
-                .andExpect(jsonPath("$.name", is(VET_FIRSTNAME)))
+                .andExpect(jsonPath("$.firstname", is(VET_FIRSTNAME)))
                 .andExpect(jsonPath("$.lastname", is(LASTNAME)))
                 .andExpect(jsonPath("$.id", is(TYPE_ID)));
 
@@ -67,7 +67,7 @@ public class VetControllerTestCreate {
         newVetTO.setLastname(LASTNAME);
         newVetTO.setId(TYPE_ID);
 
-        ResultActions mvcActions = mockMvc.perform(post("/pets")
+        ResultActions mvcActions = mockMvc.perform(post("/vets")
                         .content(om.writeValueAsString(newVetTO))
                         .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON))
                 .andDo(print())
