@@ -35,22 +35,18 @@ public class VetControllerTestCreate {
 
         String VET_FIRSTNAME = "Eduardo";
         String LASTNAME = "Vera";
-        int TYPE_ID = 1;
 
         VetDTO newVetDTO = new VetDTO();
         newVetDTO.setFirstname(VET_FIRSTNAME);
         newVetDTO.setLastname(LASTNAME);
-        newVetDTO.setId(TYPE_ID);
 
         this.mockMvc.perform(post("/vets")
                         .content(om.writeValueAsString(newVetDTO))
                         .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isCreated())
-                //.andExpect(jsonPath("$.id", is(1)))
                 .andExpect(jsonPath("$.firstname", is(VET_FIRSTNAME)))
-                .andExpect(jsonPath("$.lastname", is(LASTNAME)))
-                .andExpect(jsonPath("$.id", is(TYPE_ID)));
+                .andExpect(jsonPath("$.lastname", is(LASTNAME)));
 
     }
 
@@ -59,13 +55,11 @@ public class VetControllerTestCreate {
     public void testDeleteVet() throws Exception {
 
         String VET_FIRSTNAME = "Beethoven3";
-        int TYPE_ID = 1;
         String LASTNAME = "2020-05-20";
 
         VetDTO newVetTO = new VetDTO();
         newVetTO.setFirstname(VET_FIRSTNAME);
         newVetTO.setLastname(LASTNAME);
-        newVetTO.setId(TYPE_ID);
 
         ResultActions mvcActions = mockMvc.perform(post("/vets")
                         .content(om.writeValueAsString(newVetTO))
@@ -74,11 +68,12 @@ public class VetControllerTestCreate {
                 .andExpect(status().isCreated());
 
         String response = mvcActions.andReturn().getResponse().getContentAsString();
-
         Integer id = JsonPath.parse(response).read("$.id");
 
-        mockMvc.perform(delete("/pets/" + id ))
+        mockMvc.perform(delete("/vets/" + id ))
                 /*.andDo(print())*/
                 .andExpect(status().isOk());
     }
+
+
 }
