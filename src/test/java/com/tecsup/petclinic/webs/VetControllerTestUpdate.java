@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 /**
  *
- * Eduardo Bullon
+ * @author Eduardo Bullon
  */
 @AutoConfigureMockMvc
 @SpringBootTest
@@ -35,11 +35,11 @@ public class VetControllerTestUpdate {
     public void testUpdateVet() throws Exception {
 
 
-        String FIRSTNAME = "David";
-        String LASTNAME = "Johnson";
+        String FIRSTNAME = "Eduardo";
+        String LASTNAME = "Bullon";
 
-        String UP_FIRSTNAME = "David Updated";
-        String UP_LASTNAME = "Johnson Updated";
+        String UP_FIRSTNAME = "Fernando";
+        String UP_LASTNAME = "Vera";
 
         VetDTO newVetDTO = new VetDTO();
         newVetDTO.setFirstname(FIRSTNAME);
